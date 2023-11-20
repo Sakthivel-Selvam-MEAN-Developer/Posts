@@ -53,24 +53,26 @@ function App() {
   }
 
   return (
-    <div className="container app d-flex flex-column justify-content-between">
-      <NavBar />
-      <Routes>
-        <Route path='/' element={<Main posts={posts} />} />
-        <Route path='newpost' element={
-          <NewPost
-            newPostTitle={newPostTitle}
-            newPostContent={newPostContent}
-            handleSubmit={handleSubmit}
-            setNewPostTitle={setNewPostTitle}
-            setNewPostContent={setNewPostContent}
-          />} 
+    <Routes>
+      <Route path='Senchola-React-Task2' >
+        <div className="container app d-flex flex-column justify-content-between">
+          <NavBar />
+          <Route index element={<Main posts={posts} />} />
+          <Route path='/newpost' element={
+            <NewPost
+              newPostTitle={newPostTitle}
+              newPostContent={newPostContent}
+              handleSubmit={handleSubmit}
+              setNewPostTitle={setNewPostTitle}
+              setNewPostContent={setNewPostContent}
+            />}
           />
-        <Route path='/about' element={<About />} />
-        <Route path='*' element={<NotFound />} />
-      </Routes>
-      <Footer />
-    </div>
+          <Route path='/about' element={<About />} />
+          <Route path='*' element={<NotFound />} />
+          <Footer />
+        </div>
+      </Route>
+    </Routes>
   )
 }
 
